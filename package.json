@@ -1,0 +1,22 @@
+{
+  "name": "@echohello/jevctl",
+  "version": "0.1.0",
+  "description": "Clean-room CLI for typed AI judgments via TypeSafe or OpenRouter.",
+  "type": "module",
+  "bin": { "jevctl": "./dist/index.js" },
+  "main": "./dist/index.js",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "bun build src/index.ts --target=bun --outdir=dist --minify --sourcemap=external",
+    "build:all": "bun build src/index.ts src/commands/*.ts --target=bun --outdir=dist --minify --sourcemap=external",
+    "dev": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "license": "MIT",
+  "engines": { "bun": ">=1.1" },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.5"
+  }
+}
